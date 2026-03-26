@@ -1,0 +1,80 @@
+/* frontend/src/pages/Dashboard.css */
+.dashboard-container {
+  padding: 60px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.welcome-text {
+  font-size: 3rem;
+  font-weight: 700;
+  margin: 0;
+  background: linear-gradient(90deg, #f8fafc, #94a3b8);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.subtitle {
+  color: #94a3b8;
+  font-size: 1.2rem;
+  margin-top: 10px;
+  margin-bottom: 50px;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+}
+
+.stat-card {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  padding: 30px;
+  border-radius: 16px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(10px);
+}
+
+.stat-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; height: 2px;
+  background: linear-gradient(90deg, transparent, var(--card-color), transparent);
+  opacity: 0.5;
+}
+
+.stat-label {
+  color: #94a3b8;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 600;
+}
+
+.stat-value {
+  font-size: 3.5rem;
+  font-weight: 700;
+  font-family: 'JetBrains Mono', monospace;
+  margin: 15px 0;
+  color: var(--card-color);
+  text-shadow: 0 0 20px rgba(var(--card-rgb), 0.3);
+}
+
+/* Progress Bar */
+.progress-track {
+  height: 6px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  background: var(--card-color);
+  border-radius: 10px;
+  box-shadow: 0 0 10px var(--card-color);
+  transition: width 1s cubic-bezier(0.4, 0, 0.2, 1);
+}
