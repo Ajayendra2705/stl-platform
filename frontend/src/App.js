@@ -10,13 +10,13 @@ import Arena from './pages/Arena/Arena';
 export default function App() {
   const [globalLevel, setGlobalLevel] = useState(1.0);
 
-  const apiUrl = process.env.REACT_APP_API_URL;
   useEffect(() => {
+    const apiUrl = process.env.REACT_APP_API_URL;
     fetch(`${apiUrl}/api/question`)
       .then(res => res.json())
       .then(data => setGlobalLevel(data.currentLevel))
       .catch(err => console.error(err));
-  }, []);
+  }, []); // Keep this empty, but move the variable INSIDE the hook
 
   return (
     <Router>

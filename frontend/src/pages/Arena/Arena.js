@@ -16,8 +16,8 @@ export default function Arena({ level, updateGlobalLevel }) {
   const [secondsElapsed, setSecondsElapsed] = useState(0);
   const [isTimerRunning, setIsTimerRunning] = useState(true);
 
-  const apiUrl = process.env.REACT_APP_API_URL;
   useEffect(() => {
+    const apiUrl = process.env.REACT_APP_API_URL;
     fetch(`${apiUrl}/api/question`)
       .then(res => res.json())
       .then(data => setQuestion(data.question))
